@@ -11,8 +11,8 @@ LDFLAGS = -g -lm
 
 
 BINARIES = binpack
-OBJECTS = binpack.o
-TARGET= 
+OBJECTS = binpack.o heuristique.o
+TARGET= mainBinpack.o
 TRASHFILES=*~
 
 all : $(BINARIES) $(OBJECTS) $(TARGET)
@@ -25,7 +25,8 @@ binpack:$(OBJECTS) mainBinpack.o
 
 #make depend---------------------------------------------------
 binpack.o: binpack.c binpack.h
-
+heuristique.o: heuristique.c binpack.h
+mainBinpack.o: mainBinpack.c binpack.h heuristique.h
 ###------------------------------
 ### Misc.
 ###------------------------------------------------------------
