@@ -68,10 +68,17 @@ int certificatChargement(certificat_t cer);
  */
 int isCorrectCertificats(certificat_t cer);
 
+/*nb utilisation de l'objet ligne*/
+int sommeLigne(certificat_t cer, int ligne);
+
+/** somme des objets dans le sac col*/
+int sommeColone(certificat_t cer, int col);
+
 
 void british(certificat_t cer);
 void verif(certificat_t cer);
 void nonDeter(certificat_t cer, int nbNonDeter);
+
 void printfCer(certificat_t cer);
 
 #endif
