@@ -21,4 +21,4 @@ void firstFit(certificat_t cer);
  */
 void bestFit(certificat_t cer);
 
-#endef
+#endif
