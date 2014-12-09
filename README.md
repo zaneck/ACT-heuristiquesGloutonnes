@@ -17,8 +17,21 @@ optimalement.
 
 Fichiers
 ========
+*Gestion du probleme original binpack
+    *binpack.c
+    *binpack.h
+ *Gestion des heuristique
+    *heuristique.c
+    *heuristique.h
+ *Routine principal
+    *mainBinpack.c
+ *Se simplifier la vie
+    *Makefile
 
 
 
 How to
 ======
+make
+
+./binpack
