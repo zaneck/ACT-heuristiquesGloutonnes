@@ -20,12 +20,15 @@ Fichiers
 * Gestion du probleme original binpack
     * binpack.c
     * binpack.h
- * Gestion des heuristique
+
+* Gestion des heuristique
     * heuristique.c
     * heuristique.h
- * Routine principal
+
+* Routine principal
     * mainBinpack.c
- * Se simplifier la vie
+
+* Se simplifier la vie
     * Makefile
 
 
