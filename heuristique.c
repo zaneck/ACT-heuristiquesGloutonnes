@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "binpack.h"
 
 void
 nextFit(certificat_t cer){
   int i,n, sacC, capa, sommeSac;
 
   sacC=0;
-  capa=cer->capaciteSacs;
+  capa=cer->capaciteSac;
   n=cer->nombreObjets;
 
   /*Pour tous les objets*/
@@ -35,13 +36,13 @@ nextFit(certificat_t cer){
 }
 
 
-/* void */
-/* firstFit(certificat_t cer){ */
+void
+firstFit(certificat_t cer){
 
-/* } */
+}
 
 
-/* void */
-/* bestFit(certificat_t cer){ */
+void
+bestFit(certificat_t cer){
 
-/* } */
+}
