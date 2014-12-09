@@ -3,7 +3,7 @@
 #include<getopt.h>
 
 #include"binpack.h"
-
+#include"heuristique.h"
 void
 usage(void){
   printf("-n nextFit\n");
@@ -14,7 +14,7 @@ usage(void){
 
 int
 main(int argc, char* argv[]){
-  int flag, nbNonDeter; /*0 1 2: next first best*/
+  int flag; /*0 1 2: next first best*/
   char c;
 
   certificat_t cer;
