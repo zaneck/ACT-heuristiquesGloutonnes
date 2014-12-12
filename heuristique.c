@@ -3,6 +3,8 @@
 
 #include "binpack.h"
 
+#define debug 1
+
 void
 nextFit(certificat_t cer){
   int i,n, sacC, capa, sommeSac;
@@ -13,6 +15,9 @@ nextFit(certificat_t cer){
 
   /*Pour tous les objets*/
   for(i=0; i<n; i++){
+    if(debug==1){
+      printfCer(cer);
+    }
     /*on essaye de le mettre dans le sacC*/
     sommeSac= sommeColone(cer, sacC) + cer->objets[i];
     if(sommeSac<= capa){
@@ -45,8 +50,10 @@ firstFit(certificat_t cer){
 
   /*Pour tous les objets*/
   for(i=0; i<n; i++){
+    if(debug==1){
+      printfCer(cer);
+    }
     sacC=0;
-
     while(sacC !=-1){
       /*on essaye de le mettre dans le sacC*/
       sommeSac= sommeColone(cer, sacC) + cer->objets[i];
@@ -77,6 +84,9 @@ bestFit(certificat_t cer){
 
   /*Pour chaque objets*/
   for(i=0; i<n; i++){
+    if(debug==1){
+      printfCer(cer);
+    }
     plusRempli=0;
     sacSelect=-1;
     /*pour tous les sacs créé*/
