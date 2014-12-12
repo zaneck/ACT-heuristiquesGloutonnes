@@ -3,7 +3,7 @@
 
 #include "binpack.h"
 
-#define debug 1
+#define debug 0
 
 void
 nextFit(certificat_t cer){
@@ -101,7 +101,7 @@ bestFit(certificat_t cer){
     if(sacSelect != -1){
       cer->tabRes[i][sacSelect]=1;
     }
-    else if(++nbSacC >= cer->nombreSacs){/*il y a plus de sac dispo*/
+    else if(++nbSacC > cer->nombreSacs){/*il y a plus de sac dispo*/
       return;
     }
     else{/*on met l'objets dans ce sacs*/
