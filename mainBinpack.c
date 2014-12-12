@@ -6,6 +6,7 @@
 #include"heuristique.h"
 void
 usage(void){
+  printf("-o ofline mode\n");
   printf("-n nextFit\n");
   printf("-f firstFit\n");
   printf("-bestFit\n");
@@ -16,15 +17,18 @@ int
 main(int argc, char* argv[]){
   int flag; /*0 1 2: next first best*/
   char c;
+  int offline;
 
   certificat_t cer;
 
   /*debut init*/
   flag=-1;
+  offline=0;
   
   while (1) {
     static struct option long_options[] =
       {
+	{"offline", no_argument, 0, 'o'},
 	{"nextFit", no_argument, 0, 'n'},
 	{"firstFit", required_argument, 0, 'f'},
 	{"bestFit", no_argument, 0, 'b'},
@@ -32,11 +36,14 @@ main(int argc, char* argv[]){
       };
     int option_index = 0;
 
-    c = getopt_long(argc, argv, "nfb", long_options, &option_index);
+    c = getopt_long(argc, argv, "onfb", long_options, &option_index);
 
     if (c == -1) break;
 
     switch(c){
+    case 'o':
+      offline=1;
+      break;
     case 'n' :
       flag = 0;
       break;
@@ -62,7 +69,9 @@ main(int argc, char* argv[]){
   
   cer= (certificat_t)malloc(sizeof(struct certificat_s));
   lectureData(cer);
-  
+  if(offline==1){
+    offlineObjet(cer);
+  }
   switch(flag){
   case 0:/* next*/
     nextFit(cer);

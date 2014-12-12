@@ -110,3 +110,21 @@ bestFit(certificat_t cer){
   }
   return;
 }
+
+static int
+comp(const void* a, const void* b){
+  if(*(const int *)a==*(const int *)b){
+    return 0;
+  }
+  else if( *(const int *)a>*(const int *)b){
+    return 1;
+  }
+  else{
+    return 0;
+  }
+}
+
+void
+offlineObjet(certificat_t cer){
+  qsort(cer->objets, (size_t)cer->nombreObjets,sizeof(int), comp);
+}

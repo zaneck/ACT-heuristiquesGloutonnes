@@ -21,4 +21,9 @@ void firstFit(certificat_t cer);
  */
 void bestFit(certificat_t cer);
 
+/*
+ * trie les objets par ordre croissant
+ *
+ */
+void offlineObjet(certificat_t cer);
 #endif
