@@ -35,6 +35,13 @@ Fichiers
 
 How to
 ======
-make
+**Utilisation**
 
-./binpack
+  * Construction de l'executable
+    * <code>make</code>
+  * Suppresion des objets
+    * <code>make clean</code>
+  * Suppression des objets et de l'executable
+    * <code>make realclean</code>
+  * Help
+    * <code>./binpack</code>
