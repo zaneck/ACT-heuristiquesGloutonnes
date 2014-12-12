@@ -15,7 +15,7 @@ nextFit(certificat_t cer){
   for(i=0; i<n; i++){
     /*on essaye de le mettre dans le sacC*/
     sommeSac= sommeColone(cer, sacC) + cer->objets[i];
-    if(sommeSac< capa){
+    if(sommeSac<= capa){
       /*On l'ajoute*/
       cer->tabRes[i][sacC]=1;
     }
@@ -38,7 +38,31 @@ nextFit(certificat_t cer){
 
 void
 firstFit(certificat_t cer){
+  int i,n, sacC, capa, sommeSac;
 
+  capa=cer->capaciteSac;
+  n=cer->nombreObjets;
+
+  /*Pour tous les objets*/
+  for(i=0; i<n; i++){
+    sacC=0;
+
+    while(sacC !=-1){
+      /*on essaye de le mettre dans le sacC*/
+      sommeSac= sommeColone(cer, sacC) + cer->objets[i];
+      if(sommeSac <= capa){
+	cer->tabRes[i][sacC]=1;
+	sacC=-1;
+      }
+      else{/*sinon on passe au sac suivant*/
+	sacC++;
+	if(sacC >= cer->nombreSacs){/*si ça passe pas.. echec*/
+	  return;
+	}
+      }
+    }
+  }
+  return;
 }
 
 
