@@ -244,8 +244,9 @@ printfCer(certificat_t cer){
  
   for(i=0; i< cer->nombreObjets; i++){
     for(j=0; j< cer->nombreSacs; j++){
-      printf("cer->tabRes[%d][%d] %d\n",i,j,cer->tabRes[i][j]);
+      printf("%d ",cer->tabRes[i][j]);
     }
+    printf("\n");
   }
 
 }
