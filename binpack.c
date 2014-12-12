@@ -243,6 +243,7 @@ printfCer(certificat_t cer){
   printf("Capacité des sacs %d\n",cer->capaciteSac);
  
   for(i=0; i< cer->nombreObjets; i++){
+    printf("<%d> ", cer->objets[i]);
     for(j=0; j< cer->nombreSacs; j++){
       printf("%d ",cer->tabRes[i][j]);
     }
