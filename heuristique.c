@@ -68,5 +68,35 @@ firstFit(certificat_t cer){
 
 void
 bestFit(certificat_t cer){
+  int i, j, n, capa, sommeSac;
+  int nbSacC, sacSelect, plusRempli;
+  
+  capa=cer->capaciteSac;
+  n=cer->nombreObjets;
+  nbSacC=1;
 
+  /*Pour chaque objets*/
+  for(i=0; i<n; i++){
+    plusRempli=0;
+    sacSelect=-1;
+    /*pour tous les sacs créé*/
+    for(j=0; j<nbSacC; j++){
+      sommeSac= sommeColone(cer, j) + cer->objets[i];
+      if(sommeSac <= capa && sommeSac > plusRempli){
+	sacSelect=j;
+	plusRempli= sommeSac;
+      }
+    }
+    /*sacSelect indique si il y a un sac qui correspond ou non*/
+    if(sacSelect != -1){
+      cer->tabRes[i][sacSelect]=1;
+    }
+    else if(++nbSacC >= cer->nombreSacs){/*il y a plus de sac dispo*/
+      return;
+    }
+    else{/*on met l'objets dans ce sacs*/
+      cer->tabRes[i][nbSacC-1]=1;
+    }
+  }
+  return;
 }
