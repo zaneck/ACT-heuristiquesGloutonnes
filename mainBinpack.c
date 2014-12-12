@@ -81,7 +81,7 @@ main(int argc, char* argv[]){
     exit(EXIT_FAILURE);
     break;
   }
-  if(isCorrectCertificats(cer)){
+  if(isCorrectCertificats(cer)==1){
     printf("Un certificat trouve\n");
     printfCer(cer);
   }
